@@ -18,7 +18,7 @@ function TodoList({todolist,todo,settodolist}:Props) {
 
   const handleEdit = (e: React.FormEvent, id: number) => {
     e.preventDefault();
-    if (editTodo!="" && editTodo!=" "){
+    if (/^(?=.*[^\s\u0000])[\s\S]*$/.test(editTodo)){
       settodolist(
         todolist.map((item)=>(item.id===id?({...item,todo:editTodo}):item))
       );

@@ -14,7 +14,7 @@ function InputField() {
   
     const handleclick=()=>{
 
-        if (todo!="" && todo!=" "){
+        if (/^(?=.*[^\s\u0000])[\s\S]*$/.test(todo)){
             setarr([...arr,{id:Date.now(),todo:todo,isdone:false}]);
             setTodo("");
            
